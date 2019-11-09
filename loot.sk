@@ -1,5 +1,6 @@
 function loot() :: items:
 	add (random integer between 8 and 16) of oak planks to {_items::*}
+	add (random integer between 8 and 16) of diamonds to {_items::*}
 	return {_items::*}
 
 command /chest:
