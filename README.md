@@ -1,1 +1,1 @@
-# Skript-Skywars
+http://skriptlang.github.io/Skript/expressions.html
