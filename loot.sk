@@ -1,0 +1,12 @@
+function loot() :: items:
+	add (random integer between 8 and 16) of oak planks to {_items::*}
+	return {_items::*}
+
+command /chest:
+	trigger:
+		if arg 1 is set:
+			if arg 2 is set:
+				set {Skywars::%arg-1%::}
+		if targeted block is chest:
+			set inventory of targeted block to loot()
+

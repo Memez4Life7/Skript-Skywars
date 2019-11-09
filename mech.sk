@@ -1,0 +1,36 @@
+options:
+	prefix: &b<&nSkywars&r&b>
+
+on right click:
+	if player is holding blaze rod with name "Shoot":
+		spawn tnt 1 above targeted block
+		remove 1 blaze rod with name "Shoot" from player
+
+command /magicrod:
+	trigger:
+		give player 10 blaze rod with name "Shoot"
+
+on shoot:
+	if shooter is holding bow with nbt "{Unbreakable:1,display:{Name:'{""text"":""Explosive Bow""}'}}":
+		cancel event
+		shoot fireball from shooter at speed 3
+		remove 1 arrow from shooter
+
+command /explosivebow:
+	trigger:
+		give player 1 bow with nbt "{Unbreakable:1,display:{Name:'{""text"":""Explosive Bow""}'}}"
+
+command /test:
+	trigger:
+		message "{@prefix} hello %player%"
+
+on shoot:
+	if shooter is holding egg with name "Bridge Egg":
+		while projectile is alive:
+			if block 2 under projectile is air:
+				set block 2 under projectile to wool
+			wait 1 tick
+
+command /bridger:
+	trigger:
+		give player 2 egg with name "Bridge Egg"
