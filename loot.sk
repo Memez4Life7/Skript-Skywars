@@ -8,6 +8,6 @@ command /chest:
 		if arg 1 is set:
 			if arg 2 is set:
 				set {Skywars::%arg-1%::}
-		if targeted block is chest:
+		if block under player is chest:
 			set inventory of targeted block to loot()
 
